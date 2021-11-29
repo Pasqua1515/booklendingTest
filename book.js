@@ -143,48 +143,50 @@ async function returnBook(name) {
 
 // This function validates a return book action
 async function areyousure(libro) {
-  let validateBook = await readInput(questions.validateReturnBookPrompt);
-  if (validateBook == "y") {
-    const indexOfLibro = library.indexOf(libro);
-    library.splice(indexOfLibro, 1);
+  //let validateBook = await readInput(questions.validateReturnBookPrompt);
+  // if (validateBook == "y") {
+  //   const indexOfLibro = library.indexOf(libro);
+  //   library.splice(indexOfLibro, 1);
 
-    console.log(
-      `${libro.title
-      } has been removed from your rented books library on ${calcTime()}`
-    );
+  //   console.log(
+  //     `${libro.title
+  //     } has been removed from your rented books library on ${calcTime()}`
+  //   );
 
-    introduction();
-    //go bck function
-  } else if ((ans = "n")) {
-    console.log("**back to main menu**");
-    introduction();
-  } else {
-    console.log(`****** Please choose a valid option *****)`);
-    areyousure(libro);
-  }
+  //   // introduction();
+  //   //go bck function
+  // } else if ((ans = "n")) {
+  //   console.log("**back to main menu**");
+  //   //introduction();
+  // } else {
+  //   console.log(`****** Please choose a valid option *****)`);
+  //   areyousure(libro);
+  // }
+
+  return "yes"
 }
 
 
 // Go back to introduction
 async function goback(gob) {
-  if (gob == "q") {
-    console.log("**back to main menu**");
-    introduction();
-  } else {
-    console.log(`****** Please choose a valid option *****)`);
-    let option = await readInput(questions.goBackPrompt);
-    goback(option);
-  }
+  // if (gob == "q") {
+  //   console.log("**back to main menu**");
+  //   introduction();
+  // } else {
+  //   console.log(`****** Please choose a valid option *****)`);
+  //   let option = await readInput(questions.goBackPrompt);
+  //   goback(option);
+  // }
+  return "back"
 }
 
 
 
-//bookLending();
-// console.log(bookLending)
+//bookLending()
 
 
 
 module.exports = {
   bookLending,
-  introduction, startOver, firstQ, borrowBook, newBookQuestion, calcTime, returnBook, areyousure, goback
+  introduction, startOver, borrowBook, newBookQuestion, returnBook, areyousure, goback
 };

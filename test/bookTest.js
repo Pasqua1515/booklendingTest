@@ -1,12 +1,12 @@
 const assert = require("chai").assert;
-const { readInput, startOverOptions } = require("../utils")
+
 const { bookLending,
     introduction,
     startOver,
-    firstQ,
+
     borrowBook,
     newBookQuestion,
-    calcTime,
+
     returnBook,
     areyousure,
     goback } = require("../book");
@@ -53,5 +53,19 @@ describe("App functionalities", function () {
             assert.equal(res, "returned")
         })
     })
+
+    it("should ask if you're sure of your choice", function () {
+        return areyousure().then(res => {
+            assert.equal(res, "yes")
+        })
+    })
+
+    it("should go back", function () {
+        return goback().then(res => {
+            assert.equal(res, "back")
+        })
+    })
+
+
 
 })

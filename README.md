@@ -1,0 +1,1 @@
+In order to test this api all you need to do is run npm test in your terminal.
